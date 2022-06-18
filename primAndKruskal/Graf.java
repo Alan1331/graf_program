@@ -202,4 +202,14 @@ class Graf {
     }
     return false;
   }
+
+  void printEdges(){
+    for (int i = 0; i < this.nodes; i++) {
+      for (int j = i; j < this.nodes; j++) {
+        if(this.graf[i][j] > 0){
+          System.out.println(this.nodeLabel(i) + "--" + this.nodeLabel(j) + ":" + this.getCost(i,j));
+        }
+      }
+    }
+  }
 }
