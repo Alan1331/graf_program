@@ -17,6 +17,13 @@ class Edge implements Comparable<Edge>{
         return cost - e.cost;
     }
 
+    public HashSet<Integer>getNodes(){
+        return this.vertex;
+    }
+    public int getCost(){
+        return this.cost;
+    }
+
     public int getNodeA() {
         Object[] vertex = this.vertex.toArray();
         return (int) vertex[0];
