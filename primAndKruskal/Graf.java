@@ -144,8 +144,22 @@ class Graf {
     }
   }
 
-  Graf Kruskal() {
-      Graf t = new Graf(this.nodes);
+  Graf kruskal() {
+    Graf t = new Graf(this.nodes);
+    ArrayList<Edge> edges = getAllEdgesSorted();
+    Iterator<Edge> itr = edges.iterator();
+    for (int i = 0; i < this.nodes - 1; i++) {
+      Edge e = itr.next();
+      System.out.println("addEdge(" + e.getNodeA() + "," + e.getNodeB() + "," + e.getCost() +  ")");
+      t.addEdge(e.getNodeA(), e.getNodeB(),  e.getCost());
+      while (t.hasCycle() && itr.hasNext()) {
+        System.out.println("removesEdge(" +  e.getNodeA() + "," + e.getNodeB() + "," + e.getCost() + ")");
+        t.removeEdge(e.getNodeA(), e.getNodeB());
+        e = itr.next();
+        System.out.println("addEdge(" + e.getNodeA() + "," + e.getNodeB() + "," + e.getCost() + ")");
+        t.addEdge(e.getNodeA(), e.getNodeB(), e.getCost());
+      }
+    }
   }
 
   int getMinTetangga(int n, ArrayList<Integer> dengan) {
