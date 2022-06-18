@@ -144,7 +144,7 @@ class Graf {
     }
   }
 
-  Graf kruskal() {
+  Graf Kruskal() {
     Graf t = new Graf(this.nodes);
     ArrayList<Edge> edges = getAllEdgesSorted();
     Iterator<Edge> itr = edges.iterator();

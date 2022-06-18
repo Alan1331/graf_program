@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 class Edge implements Comparable<Edge>{
-    HashMap<Integer> vertex;
+    HashSet<Integer> vertex;
     int cost;
 
-    public Edge(HashMap<Integer> nodset,int w){
+    public Edge(HashSet<Integer> nodset,int w){
         this.vertex = new HashSet<Integer>(nodset);
         this.cost = w;
     }
@@ -17,7 +17,7 @@ class Edge implements Comparable<Edge>{
         return cost - e.cost;
     }
 
-    public HashSet<Integer>getNodes(){
+    public HashSet<Integer> getNodes(){
         return this.vertex;
     }
     public int getCost(){
